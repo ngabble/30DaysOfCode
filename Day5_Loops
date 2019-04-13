@@ -13,10 +13,20 @@ using System.Text;
 using System;
 
 class Solution {
+    
+    public static void Driver(int n)
+    {
+        for (int i = 1; i< 11; ++i)
+        {
+            int product = n * i;
 
+            Console.WriteLine("{0} x {1} = {2}", n, i, product);
+        }
+     }
 
 
     static void Main(string[] args) {
         int n = Convert.ToInt32(Console.ReadLine());
+        Driver(n);   
     }
 }
