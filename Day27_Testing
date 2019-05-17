@@ -1,0 +1,6 @@
+Your company needs a function that meets the following requirements:
+•	For a given array of n integers, the function returns the index of the element with the minimum value in the array. If there is more than one element with the minimum value, the returned index should be the smallest one.
+•	If an empty array is passed to the function, it should raise an Exception.
+--Hackerrank.com, Day 27
+
+This challenge isn’t offered in C#. I found a solution to the Python 3 version offered by user guangysong in the discussion thread of the challenge and used that to move to the next day’s problem.  
