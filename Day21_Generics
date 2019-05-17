@@ -2,12 +2,13 @@ using System;
 
 class Printer
 {
-    /**
-    *    Name: PrintArray
-    *    Print each element of the generic array on a new line. Do not return anything.
-    *    @param A generic array
-    **/
-    // Write your code here
+    static void PrintArray<T>(T[] list)
+    {
+        foreach (T item in list)
+        {
+            Console.WriteLine(item);
+        }
+    }
     static void Main(string[] args)
     {
         int n = Convert.ToInt32(Console.ReadLine());
@@ -28,3 +29,4 @@ class Printer
         PrintArray<String>(stringArray);
     }
 }
+
