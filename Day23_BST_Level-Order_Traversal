@@ -12,11 +12,29 @@ class Node{
     }
 }
 class Solution{
+    static void levelOrder(Node root)
+    {
+        Queue<Node> queue = new Queue<Node>();
+        Node current;
+        if(root!=null)
+        {
+            queue.Enqueue(root);
+        }
+        while(queue.Count > 0)
+        {
+            current = queue.Dequeue();
+            Console.Write(current.data + " ");
 
-    static void levelOrder(Node root){
-        //Write your code here
+            if(current.left!=null)
+            {
+            queue.Enqueue(current.left);
+            }
+            if(current.right!=null)
+            {
+            queue.Enqueue(current.right);
+            }
+        }
     }
-
     static Node insert(Node root, int data){
         if(root==null){
             return new Node(data);
