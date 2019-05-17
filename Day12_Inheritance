@@ -18,24 +18,53 @@ class Person{
 }
 
 class Student : Person{
-    private int[] testScores;  
-  
-    /*  
-    *   Class Constructor
-    *   
-    *   Parameters: 
-    *   firstName - A string denoting the Person's first name.
-    *   lastName - A string denoting the Person's last name.
-    *   id - An integer denoting the Person's ID number.
-    *   scores - An array of integers denoting the Person's test scores.
-    */
-    // Write your constructor here
-    
-    /*  
-    *   Method Name: Calculate
-    *   Return: A character denoting the grade.
-    */
-    // Write your method here
+    private int[] testScores;
+    public Student(string firstName, string lastName, int identification, int[] scores)
+    {
+        this.testScores = scores;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.id = identification;
+    }
+    public char Calculate()
+    {
+        char score = 'N';
+        int tempSum = 0;
+        int tempDevisor = testScores.Length;
+
+        foreach (int i in testScores)
+        {
+            tempSum = tempSum + i;
+        }
+        
+        int avg = tempSum / tempDevisor;
+
+        if (avg < 40)
+        {
+            score = 'T';
+        }
+        else if (39 < avg && avg < 55)
+        {
+            score = 'D';            
+        }
+        else if (54 < avg && avg < 70)
+        {
+            score = 'P';            
+        }
+        else if (69 < avg && avg < 80)
+        {
+            score = 'A';            
+        }
+        else if (79 < avg && avg < 90)
+        {
+            score = 'E';            
+        }
+        else if (89 < avg && avg < 101)
+        {
+            score = 'O';            
+        }
+        return score;
+    }
 }
 
 class Solution {
