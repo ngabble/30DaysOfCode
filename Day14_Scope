@@ -6,7 +6,18 @@ class Difference {
     public int maximumDifference;
 
     // Add your code here
+    public Difference(int[] a)
+    {elements = a;}
 
+public int computeDifference()
+{
+Array.Sort(elements, 0, elements.Length);
+int n = elements.Length;
+int largest = elements[n-1];
+int smallest = elements[0];
+    maximumDifference = largest - smallest;
+    return maximumDifference;
+}
 } // End of Difference Class
 
 class Solution {
@@ -22,3 +33,4 @@ class Solution {
         Console.Write(d.maximumDifference);
     }
 }
+
