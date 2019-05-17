@@ -7,10 +7,52 @@ class Node{
         left=right=null;
     }
 }
-class Solution{
+class Solution
+{
+    static int getHeight(Node root)
+    {
+        int height;
+        int rightHeight = 0;
+        int leftHeight = 0;
+        Node current = root; 
 
-    static int getHeight(Node root){
-      //Write your code here
+        while (current.right != null | current.left != null)
+        {
+            if (current.right != null) 
+            {   
+                current = current.right;
+                rightHeight++;
+            }
+            else
+            {
+                current = current.left;
+                rightHeight++;                
+            }
+        }
+        current = root;
+        while (current.left != null | current.right != null)
+        {
+            if (current.left != null) 
+            {   
+                current = current.left;
+                leftHeight++;
+            }
+            else
+            {
+                current = current.right;
+                leftHeight++;                
+            }
+        }
+        if(rightHeight > leftHeight)
+        {
+            height = rightHeight;
+            return height;
+        }
+        else
+        {
+            height = leftHeight;
+            return height;
+        }
     }
 
     static Node insert(Node root, int data){
@@ -39,5 +81,6 @@ class Solution{
         }
         int height=getHeight(root);
         Console.WriteLine(height);
-        
     }
+}
+
