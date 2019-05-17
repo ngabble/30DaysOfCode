@@ -12,7 +12,21 @@ abstract class Book
     }
     public abstract void display();
 }
-//Write MyBook class
+class MyBook : Book
+{
+    protected int price;
+    
+    public MyBook() {}
+    public MyBook(String title, String author, int price)
+    {
+        this.title = title;
+        this.author = author;
+        this.price = price;
+    }
+ public MyDisplay {
+     Book.display();
+ }
+}
 class Solution {
     static void Main(String[] args) {
       String title=Console.ReadLine();
@@ -22,3 +36,4 @@ class Solution {
       new_novel.display();
     }
 }
+
